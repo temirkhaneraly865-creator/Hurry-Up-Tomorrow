@@ -1,0 +1,34 @@
+def validate_dna(dna):
+  valid = True
+    
+  for base in dna:
+    if base not in "ATGC":
+      valid = False
+
+  return valid
+
+def dna_length(dna):
+  return len(dna)
+
+def count_base(dna, base):
+  return dna.count(base)
+
+def gc_content(dna):
+  g = dna.count("G")
+  c = dna.count("C")
+  gc_percent = (g + c) / len(dna) * 100
+  return round(gc_percent, 2)
+
+dna = "ATGCGCGTACGTTAGC"
+if validate_dna(dna):
+
+  print("==DNA ANALYZER")
+  print(f"length: {dna_length(dna)}")
+  print(f"A: {count_base(dna, "A")}")
+  print(f"T: {count_base(dna, "T")}")
+  print(f"G: {count_base(dna, "G")}")
+  print(f"C: {count_base(dna, "C")}")
+  print(f"GC%: {gc_content(dna)}")
+else:
+  print("invalid dna")
+  
