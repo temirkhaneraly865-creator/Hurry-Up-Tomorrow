@@ -1,0 +1,12 @@
+fasta = """>gene_1
+ATGGCCATTGTA
+>gene_2
+CCATGGG
+>gene_3
+ATATATGC"""
+lines = fasta.splitlines()
+for line in lines:
+  if line.startswith(">"):
+    print("HEADER:", line)
+  else:
+    print("SEQUENCE:", line)
